@@ -2,356 +2,123 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>National AMR & AMU Surveillance Portal</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
-  color: #111;
-}
-
-.topbar {
-  height: 48px;
-  background: white;
-  display: flex;
-  align-items: center;
-  padding: 0 28px;
-  border-bottom: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.flag {
-  font-size: 24px;
-  margin-right: 12px;
-}
-
-.gov {
-  margin-right: 30px;
-  font-weight: 600;
-}
-
-.search {
-  margin-left: auto;
-}
-
-.search input {
-  padding: 6px;
-  border: 1px solid #aaa;
-}
-
-.hero {
-  background: linear-gradient(120deg, #001f3f, #003366);
-  color: white;
-  padding: 30px 45px;
-}
-
-.hero h1 {
-  font-size: 36px;
-  margin: 0 0 8px 0;
-}
-
-.hero p {
-  margin: 6px 0;
-  font-size: 18px;
-}
-
-.nav {
-  display: flex;
-  background: #e9eef5;
-  padding-left: 45px;
-  border-bottom: 1px solid #ccc;
-}
-
-.nav div {
-  padding: 14px 22px;
-  font-weight: 600;
-  color: #002b5c;
-}
-
-.nav .active {
-  background: #002b5c;
-  color: white;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 360px;
-  gap: 14px;
-  padding: 22px 40px;
-}
-
-.kpi-row {
-  grid-column: 1 / 3;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #d5dbe3;
-  border-radius: 6px;
-  padding: 18px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-
-.kpi {
-  text-align: center;
-}
-
-.kpi .icon {
-  font-size: 34px;
-}
-
-.kpi .num {
-  font-size: 34px;
-  font-weight: bold;
-}
-
-.kpi .label {
-  font-size: 15px;
-}
-
-h2 {
-  margin-top: 0;
-  color: #002b5c;
-  font-size: 19px;
-}
-
-.mapbox {
-  height: 305px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.canada-map {
-  width: 90%;
-  max-height: 240px;
-  object-fit: contain;
-}
-
-.legend {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-}
-
-.gradient {
-  height: 14px;
-  background: linear-gradient(90deg, #88c34a, #f6c94c, #f28a2e, #c82333);
-  margin: 8px 0;
-}
-
-.chart {
-  height: 300px;
-}
-
-svg {
-  width: 100%;
-  height: 240px;
-}
-
-.side {
-  grid-column: 3;
-  grid-row: 1 / 5;
-}
-
-.alert {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.alert-icon {
-  color: #b00000;
-  font-size: 26px;
-}
-
-.alert b {
-  color: #b00000;
-}
-
-.resource {
-  margin: 14px 0;
-  color: #002b5c;
-  font-weight: bold;
-}
-
-.amu {
-  grid-column: 1 / 2;
-}
-
-.update {
-  grid-column: 2 / 3;
-}
-
-.privacy {
-  background: #dcecf8;
-  border-color: #b7d5ed;
-}
-
-.footer {
-  background: #002b5c;
-  color: white;
-  padding: 18px 45px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.small {
-  font-size: 13px;
-}
-</style>
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <div class="topbar">
   <div class="flag">🇨🇦</div>
-  <div class="gov">Government<br>of Canada</div>
-  <div class="gov">Gouvernement<br>du Canada</div>
+  <div class="gov-text">
+    <div>Government<br>of Canada</div>
+    <div>Gouvernement<br>du Canada</div>
+  </div>
   <div class="search">
-    <input placeholder="Search site" />
+    <input placeholder="Search Canada.ca" />
     <button>🔍</button>
   </div>
 </div>
 
-<div class="hero">
+<div class="phacbar">Public Health Agency of Canada</div>
+
+<nav class="mainnav">
+  <a href="index.html" class="active">Overview</a>
+  <a href="dashboard.html" class="">Surveillance Data</a>
+  <a href="reports.html" class="">Reports & Publications</a>
+  <a href="privacy.html" class="">Privacy & Governance</a>
+</nav>
+
+<div class="breadcrumb">Canada.ca &gt; Public Health Agency of Canada &gt; Data and surveillance &gt; Integrated AMR & AMU Surveillance</div>
+<section class="page-title">
   <h1>National AMR & AMU Surveillance Portal</h1>
   <p>Integrated One Health Surveillance System</p>
-  <p>Public Health Agency of Canada</p>
-</div>
+</section>
+<main class="page">
 
-<div class="nav">
-  <div class="active">Home</div>
-  <div>Surveillance Data</div>
-  <div>Reports & Publications</div>
-  <div>Data Standards & Methods</div>
-  <div>Privacy & Governance</div>
-  <div>About</div>
-  <div>Contact</div>
-</div>
+<div class="notice">ℹ️ This prototype demonstrates how a Government of Canada communication portal could present integrated AMR and AMU surveillance findings. The values shown are mock data for presentation purposes.</div>
 
-<div class="container">
-
+<div class="dashboard-grid">
   <div class="kpi-row">
-    <div class="card kpi">
-      <div class="icon">👥</div>
-      <div class="num">8</div>
-      <div class="label">Participating<br>Provinces / Territories<br><span class="small">(2024)</span></div>
-    </div>
-
-    <div class="card kpi">
-      <div class="icon">🏥</div>
-      <div class="num">325</div>
-      <div class="label">Healthcare Sites<br>Reporting<br><span class="small">(2024)</span></div>
-    </div>
-
-    <div class="card kpi">
-      <div class="icon">🐾</div>
-      <div class="num">110</div>
-      <div class="label">Veterinary Sites<br>Reporting<br><span class="small">(2024)</span></div>
-    </div>
-
-    <div class="card kpi">
-      <div class="icon">💧</div>
-      <div class="num">74</div>
-      <div class="label">Environmental<br>Monitoring Sites<br><span class="small">(2024)</span></div>
-    </div>
+    <div class="card kpi"><div class="kpi-icon">👥</div><div><div class="kpi-number">8</div><div class="kpi-label">Participating provinces / territories<br><span class="note">(2024)</span></div></div></div>
+    <div class="card kpi"><div class="kpi-icon">🏥</div><div><div class="kpi-number">325</div><div class="kpi-label">Healthcare sites reporting<br><span class="note">(2024)</span></div></div></div>
+    <div class="card kpi"><div class="kpi-icon">🐾</div><div><div class="kpi-number">110</div><div class="kpi-label">Veterinary sites reporting<br><span class="note">(2024)</span></div></div></div>
+    <div class="card kpi"><div class="kpi-icon">💧</div><div><div class="kpi-number">74</div><div class="kpi-label">Environmental monitoring sites<br><span class="note">(2024)</span></div></div></div>
   </div>
 
-  <div class="card">
+  <section class="card map-wrapper">
     <h2>AMR by Province/Territory (2024)</h2>
-    <div class="mapbox">
-      <img src="canada-map.png" class="canada-map" alt="Map of Canada showing AMR by province and territory">
-    </div>
-    <div class="gradient"></div>
-    <div class="legend">
-      <span>Low Resistance</span>
-      <span>Moderate Resistance</span>
-      <span>High Resistance</span>
-    </div>
-    <p style="color:#002b5c; font-weight:bold;">View interactive map →</p>
-  </div>
+    <p class="note">Overall resistance level across selected organisms.</p>
+    
+<svg class="canada-map-svg" viewBox="0 0 760 330" aria-label="Simplified Canada map">
+  <rect x="25" y="145" width="100" height="90" class="province low"/>
+  <rect x="130" y="140" width="95" height="95" class="province medium"/>
+  <rect x="230" y="135" width="90" height="100" class="province medium"/>
+  <rect x="325" y="130" width="90" height="105" class="province high"/>
+  <path d="M420 135 L500 120 L560 160 L545 230 L455 235 Z" class="province high"/>
+  <path d="M565 155 L650 145 L725 190 L690 260 L590 240 Z" class="province very-high"/>
+  <path d="M100 60 L220 45 L300 80 L250 120 L130 115 Z" class="province low"/>
+  <path d="M310 45 L430 35 L520 80 L470 120 L350 105 Z" class="province low"/>
+  <path d="M530 45 L670 55 L725 115 L650 140 L545 115 Z" class="province medium"/>
+  <circle cx="705" cy="260" r="20" class="province very-high"/>
+  <circle cx="660" cy="285" r="14" class="province high"/>
+</svg>
 
-  <div class="card chart">
-    <h2>AMR Trends Over Time (National)</h2>
-    <svg viewBox="0 0 500 250">
-      <line x1="50" y1="210" x2="470" y2="210" stroke="#aaa"/>
-      <line x1="50" y1="30" x2="50" y2="210" stroke="#aaa"/>
+    <div class="legend-bar"></div>
+    <div class="legend-labels"><span>Low resistance</span><span>Moderate resistance</span><span>High resistance</span></div>
+    <a class="button" href="dashboard.html">View surveillance data →</a>
+  </section>
 
-      <polyline points="60,120 160,110 260,100 360,90 460,80" fill="none" stroke="#0047ab" stroke-width="3"/>
-      <polyline points="60,155 160,150 260,142 360,135 460,125" fill="none" stroke="#228b22" stroke-width="3"/>
-      <polyline points="60,195 160,188 260,180 360,168 460,155" fill="none" stroke="#7b3fb2" stroke-width="3"/>
+  <section class="card">
+    <h2>AMR Trends Over Time</h2>
+    
+<svg class="chart-svg" viewBox="0 0 520 250" aria-label="AMR trend chart">
+  <line x1="55" y1="210" x2="490" y2="210" stroke="#9aa7b4"/>
+  <line x1="55" y1="35" x2="55" y2="210" stroke="#9aa7b4"/>
+  <g stroke="#e1e5eb">
+    <line x1="55" y1="175" x2="490" y2="175"/>
+    <line x1="55" y1="140" x2="490" y2="140"/>
+    <line x1="55" y1="105" x2="490" y2="105"/>
+    <line x1="55" y1="70" x2="490" y2="70"/>
+  </g>
+  <polyline points="70,130 170,118 270,104 370,92 470,78" fill="none" stroke="#0047ab" stroke-width="3"/>
+  <polyline points="70,164 170,155 270,145 370,134 470,118" fill="none" stroke="#228b22" stroke-width="3"/>
+  <polyline points="70,195 170,188 270,178 370,165 470,148" fill="none" stroke="#7b3fb2" stroke-width="3"/>
+  <text x="65" y="232">2020</text><text x="165" y="232">2021</text><text x="265" y="232">2022</text><text x="365" y="232">2023</text><text x="465" y="232">2024</text>
+  <text x="12" y="70">40%</text><text x="12" y="140">20%</text><text x="19" y="210">0%</text>
+</svg>
 
-      <text x="60" y="235">2020</text>
-      <text x="160" y="235">2021</text>
-      <text x="260" y="235">2022</text>
-      <text x="360" y="235">2023</text>
-      <text x="460" y="235">2024</text>
-    </svg>
-    <p class="small">— Human AMR &nbsp;&nbsp; — Animal AMR &nbsp;&nbsp; — Environmental AMR</p>
-  </div>
+    <p class="note">Blue: human AMR; green: animal AMR; purple: environmental AMR.</p>
+  </section>
 
-  <div class="side">
-    <div class="card">
+  <aside class="side">
+    <section class="card">
       <h2 style="color:#b00000;">Emerging Threats</h2>
+      <div class="alert-item"><div class="alert-icon">⚠</div><div><b>Carbapenem-resistant Enterobacterales</b><br>Increasing trend detected in 3 provinces.</div></div>
+      <div class="alert-item"><div class="alert-icon">⚠</div><div><b>Multidrug-resistant Salmonella</b><br>Clusters identified in food-producing animals.</div></div>
+      <div class="alert-item"><div class="alert-icon">⚠</div><div><b>AMR detected in wastewater surveillance</b><br>Elevated levels detected in 5 regions.</div></div>
+    </section>
 
-      <div class="alert">
-        <div class="alert-icon">⚠</div>
-        <div><b>Carbapenem-resistant Enterobacterales</b><br>Increasing trend detected in 3 provinces.</div>
-      </div>
+    <section class="card">
+      <h2>Quick links & resources</h2>
+      <a class="resource-link" href="reports.html">Annual AMR/AMU Report <span>›</span></a>
+      <a class="resource-link" href="dashboard.html">Data standards <span>›</span></a>
+      <a class="resource-link" href="privacy.html">Privacy & governance <span>›</span></a>
+      <a class="resource-link" href="privacy.html">One Health framework <span>›</span></a>
+    </section>
 
-      <div class="alert">
-        <div class="alert-icon">⚠</div>
-        <div><b>Multidrug-resistant Salmonella</b><br>Clusters identified in food-producing animals.</div>
-      </div>
-
-      <div class="alert">
-        <div class="alert-icon">⚠</div>
-        <div><b>AMR detected in wastewater surveillance</b><br>Elevated levels in 5 regions.</div>
-      </div>
-
-      <p style="color:#002b5c; font-weight:bold;">View all alerts →</p>
-    </div>
-
-    <div class="card">
-      <h2>Quick Links & Resources</h2>
-      <div class="resource">📄 Annual AMR/AMU Report (2024)</div>
-      <div class="resource">📘 Data Standards</div>
-      <div class="resource">🔐 Privacy & Data Governance</div>
-      <div class="resource">🌎 One Health Surveillance Framework</div>
-    </div>
-
-    <div class="card privacy">
-      <h2>🔒 Data Privacy Notice</h2>
-      <p>All publicly available data are aggregated and anonymized. Individual patient or farm-level information is not displayed or shared.</p>
-      <p style="color:#002b5c; font-weight:bold;">Learn more about data privacy →</p>
-    </div>
-  </div>
-
-  <div class="card amu">
-    <h2>AMU Trends</h2>
-    <p><b>Human Health:</b> 18.4 DDD per 1,000 population ↓ 5.2%</p>
-    <p><b>Animal Health:</b> 97.6 ↓ 2.1%</p>
-    <p><b>Agriculture:</b> 4.7 ↑ 1.3%</p>
-  </div>
-
-  <div class="card update">
-    <h2>Data Updated</h2>
-    <p>📅 May 15, 2025</p>
-    <p>Next update: June 15, 2025</p>
-    <p style="color:#002b5c; font-weight:bold;">About data updates →</p>
-  </div>
-
+    <section class="card privacy-box">
+      <h2>🔒 Data privacy notice</h2>
+      <p>Publicly available data are aggregated and anonymized. Individual patient or farm-level information is not displayed or shared.</p>
+      <a class="button" href="privacy.html">Learn more →</a>
+    </section>
+  </aside>
 </div>
 
-<div class="footer">
+</main>
+<footer class="footer">
   <div>Working together for a healthier Canada</div>
   <div>Canada.ca &nbsp; | &nbsp; PHAC.ca</div>
-</div>
-
+</footer>
 </body>
 </html>
